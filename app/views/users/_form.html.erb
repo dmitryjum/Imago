@@ -15,5 +15,5 @@
   <%= f.email_field :email %>
   <br/>
 
-  <%= f.submit @user.id.nil? ? "Join!" : "Save Changes" %>
+  <%= f.submit @user.id ? "Join!" : "Save Changes" %>
 <% end %>

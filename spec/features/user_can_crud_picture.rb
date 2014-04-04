@@ -1,0 +1,1 @@
+user_can_crud_picture.rb

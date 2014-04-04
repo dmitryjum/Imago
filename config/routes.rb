@@ -1,9 +1,12 @@
 Imago::Application.routes.draw do
-  root 'welcome#index'
 
   resources :users do
     resources :pictures, shallow: true
   end
+  
+  root 'welcome#index'
+  post "/session", to: "session#create"
+  delete "/session", to: "session#destroy"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

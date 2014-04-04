@@ -1,1 +1,11 @@
 <h1>Welcome to Imago<h1>
+<ul>
+  <% if logged_in? %>
+      <li><%= link_to "My profile", user_path(current_user) %></li>
+      <li class="right"><%= link_to("Log Out #{current_user.first_name}!", "/session", method: "delete") %></li>
+    <% else %>
+        
+      <li class="right"><%= render "session/form" %></li>
+      <li class="right"><%= link_to "Sign up", new_user_path %></li>
+</ul>
+<% end %>

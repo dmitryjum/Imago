@@ -4,4 +4,5 @@ class Image
   field :name, type: String
   field :url, type: String
   validates_presence_of :user
+  validates :name, presence: true
 end

@@ -1,0 +1,16 @@
+<%= form_tag "/session" do %>
+  <%= label_tag :email %>
+  <%= email_field_tag :email %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <%= submit_tag "Log in!" %>
+<% end %>
+
+<% unless flash[:message].nil? %>
+  <div id="errors">
+    <h3>Errors!</h3>
+    <ul>
+      <li><em><%= flash[:message] %></em></li>
+    </ul>
+  </div>
+<% end %>

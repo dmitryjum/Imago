@@ -12,7 +12,7 @@ class SessionController < ApplicationController
       #save the user_id in the session hash
       session[:user_id] = user.id
       # and redirect to that user's home page
-      redirect_to user_jumps_path(user)
+      redirect_to user_path(user)
     else
       #the email/password is wrong!
       flash[:message] = "This email and password combination does not exist."

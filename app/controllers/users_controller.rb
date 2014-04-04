@@ -21,6 +21,17 @@ class UsersController < ApplicationController
   def show
   end
 
+  def update
+    @user = User.update(user_params)
+    redirect_to user_path(@user)
+  end
+
+  def destroy
+    @user.destroy
+    session.destroy
+    redirect_to root_path
+  end
+
   private
 
   def load_user

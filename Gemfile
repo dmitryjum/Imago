@@ -50,6 +50,7 @@ group :development, :test do
 
   # ORM for MongoDB
   gem "mongoid", git: 'git://github.com/mongoid/mongoid.git'
+  gem 'bson_ext'
 end
 
 # Use ActiveModel has_secure_password

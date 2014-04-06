@@ -1,7 +1,7 @@
 Imago::Application.routes.draw do
 
   resources :users do
-    resources :pictures, shallow: true
+    resources :images, shallow: true
   end
   
   root 'welcome#index'

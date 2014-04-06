@@ -4,7 +4,7 @@ class User
   # because of skipped ActiveRecord. AcitveRecord created a connection
   # for 'bcrypt' gem to ActiveModel has_secure_password method
   include ActiveModel::SecurePassword
-  has_many :images
+  embeds_many :images
 
   field :name, type: String
   field :email, type: String

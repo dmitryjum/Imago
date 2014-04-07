@@ -7,8 +7,7 @@
 <div id="album_table">
   <ul>
       <% @images.each do |img| %>
-      
-      <li><%= link_to image_tag(img.image_url), user_image_path(@user, img) %></li>
+          <li><%= link_to image_tag(img.image_url), user_image_path(@user, img) %></li>
       <% end %>
   </ul>
 </div>

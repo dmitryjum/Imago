@@ -1,30 +1,37 @@
 class ImagesController < ApplicationController
-
+self.before_action(:load_user)
+self.before_action(:load_image, {only: [:show, :destroy]})
+before_action :authenticate, :authorize
   def index
-    @images = @user.images.all
+    @image = Image.new
+    @images = @user.images.all.to_a
+  end
+
+  def show
   end
 
   def create
     @image = @user.images.create(image_params)
-    render :index
+    redirect_to user_images_path
   end
 
   def destroy
     @image.destroy
-    render :index
+    redirect_to user_images_path
   end
 
   private
 
   def load_user
-    return @user = User.find(params[:user_id])
+    return @user = current_user #User.find(params[:user_id])
   end
 
   def load_image
-    
+    return @image = Image.find(params[:id])
   end
 
   def image_params
+    params.require(:image).permit(:name, :image_url, :user_id)
   end
 
   def authenticate

@@ -1,7 +1,7 @@
 class Image
   include Mongoid::Document
-  imbedded_in :user
+  belongs_to :user
   field :name, type: String
-  field :url, type: String
+  field :image_url, type: String
   validates :name, presence: true
 end

@@ -1,0 +1,10 @@
+<p>Add another image to you album</p>
+<%= form_for  [@user, @image], url: user_images_path do |v| %>
+   <%= v.label :name %>
+  <%= v.text_field :name %>
+
+  <%= v.label :image_url %>
+  <%= v.text_field :image_url %>
+
+  <%= v.submit %>
+<% end %>

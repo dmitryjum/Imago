@@ -31,7 +31,7 @@ before_action :authenticate, :authorize
   end
 
   def image_params
-    params.require(:image).permit(:name, :image_url, :user_id)
+    params.require(:image).permit(:name, :image_url, :attachment, :user_id)
   end
 
   def authenticate

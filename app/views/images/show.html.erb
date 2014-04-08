@@ -1,6 +1,9 @@
 <div class="image_show">
-
+<% if @image.attachment != nil %>
+  <%= image_tag @image.attachment %>
+<% else %>
   <%= image_tag @image.image_url %>
+<% end %>
 
     <%= button_to "Delete this picture",
      user_image_path(@user, @image),

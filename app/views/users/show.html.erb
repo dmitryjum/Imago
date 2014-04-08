@@ -1,6 +1,11 @@
 <h1>Welcome <%= @user.name %></h1>
 <br/>
-<p><%= link_to "Update your profile", edit_user_path(@user) %></p>
-<p><%= form_tag user_path(@user), method: "delete",data: { confirm: "Are you sure?"} do %>
-    <%= submit_tag("Delete My Account") %></p>
-  <% end %>
+<div id="profile menue">
+  <p><%= link_to "Update your profile", edit_user_path(@user) %></p>
+  <p><%= form_tag user_path(@user), method: "delete",data: { confirm: "Are you sure?"} do %>
+      <%= submit_tag("Delete My Account") %></p>
+    <% end %>
+</div>
+  <canvas id="canvas">
+    Sorry, your browser doesn't support the cavas.
+  </canvas>

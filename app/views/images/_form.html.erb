@@ -6,5 +6,8 @@
   <%= v.label :image_url %>
   <%= v.text_field :image_url %>
 
+  <%= v.hidden_field :attachment_cache %>
+  <%= v.file_field :attachment %>
+ 
   <%= v.submit %>
 <% end %>

@@ -15,6 +15,7 @@
 
     <% if logged_in? %>
     <li><%= link_to "My album", user_images_path(current_user) %></li>
+    <li><%= link_to "Canvas", user_path(current_user) %></li>
       <li class="right"><%= link_to("Log Out #{current_user.name}!", "/session", method: "delete") %></li>
     <% else %>
       

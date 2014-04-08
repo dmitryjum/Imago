@@ -55,10 +55,12 @@ end
   gem "mongoid", git: 'git://github.com/mongoid/mongoid.git'
   gem 'bson_ext'
 
-# amazon web services gem
-  gem 'aws-sdk'
+
 # carrierwave for mongoid to upload files
   gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+
+ # Fog for Amazon S3 with  carrier wave
+  gem "fog", "~> 1.3.1" 
 
  # mongoid grid that needed for carrierwave
   gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs' 

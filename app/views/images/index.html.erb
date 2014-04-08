@@ -7,7 +7,12 @@
 <div id="album_table">
   <ul>
       <% @images.each do |img| %>
+        <% if img.attachment != nil %>
+
+          <li><%= link_to image_tag(img.attachment), user_image_path(@user, img) %></li>
+        <% else %>
           <li><%= link_to image_tag(img.image_url), user_image_path(@user, img) %></li>
+          <% end %>
       <% end %>
   </ul>
 </div>

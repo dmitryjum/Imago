@@ -5,6 +5,11 @@ before_action :authenticate, :authorize
   def index
     @image = Image.new
     @images = @user.images.all.to_a
+    # render json: @images
+    respond_to do |format|
+      format.html {render :index}
+      format.json {render json: @images}
+    end
   end
 
   def show
@@ -27,7 +32,7 @@ before_action :authenticate, :authorize
   end
 
   def load_image
-    return @image = Image.find(params[:id])
+    return @image = Image.find(params[:_id])
   end
 
   def image_params

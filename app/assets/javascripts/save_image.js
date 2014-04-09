@@ -16,10 +16,21 @@ saveButton.addEventListener("click", function(e){
   e.preventDefault();
   var imageName = nameInput.value;
   var imageUrl = canvas.toDataURL();
+  getDocs();
+  // saveImage(imageName, imageUrl);  
+});
 
+function getDocs(){
+  $.getJSON("/users/" + gon.current_user._id.$oid + "/images", function(dbObject){
+    var allItems = dbObject;
+    console.log(allItems[0].name);
+  })
+};
+
+function saveImage(name, url){
   $.ajax({
     type: "POST",
-    url: "/users/" + gon.current_user.id + "/images",
-    data: {image: {"name": imageName, "image_url": imageUrl}}
+    url: "/users/" + gon.current_user._id.$oid + "/images",
+    data: {image: {"name": name, "image_url": url}}
   })
-})
+}

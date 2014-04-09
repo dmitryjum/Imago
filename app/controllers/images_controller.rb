@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
 self.before_action(:load_user)
-self.before_action(:load_image, {only: [:show, :destroy]})
+self.before_action(:load_image, {only: [:show, :update, :destroy]})
 before_action :authenticate, :authorize
   def index
     @image = Image.new
@@ -13,11 +13,17 @@ before_action :authenticate, :authorize
   end
 
   def show
+    gon.current_user = @user
   end
 
   def create
     @image = @user.images.create(image_params)
     redirect_to user_images_path
+  end
+
+  def update
+    @image.update(image_params)
+    render json: @image
   end
 
   def destroy
@@ -32,7 +38,7 @@ before_action :authenticate, :authorize
   end
 
   def load_image
-    return @image = Image.find(params[:_id])
+    return @image = Image.find(params[:id])
   end
 
   def image_params

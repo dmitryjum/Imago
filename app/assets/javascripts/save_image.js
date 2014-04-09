@@ -16,15 +16,25 @@ saveButton.addEventListener("click", function(e){
   e.preventDefault();
   var imageName = nameInput.value;
   var imageUrl = canvas.toDataURL();
-  getDocs();
+  compareDocs(imageName, imageUrl);
   // saveImage(imageName, imageUrl);  
 });
 
-function getDocs(){
-  $.getJSON("/users/" + gon.current_user._id.$oid + "/images", function(dbObject){
-    var allItems = dbObject;
-    console.log(allItems[0].name);
-  })
+function compareDocs(name, url){
+  $.getJSON("/users/" + gon.current_user._id.$oid + "/images", function(response){
+    var allItems = response;
+    if (allItems.length === 0){
+      saveImage(name, url)
+    } else {
+        for (var i = 0; i < allItems.length; i++){
+        if (name === allItems[i].name){
+          updateImage(allItems[i]._id.$oid, name, url)
+        } else {
+          saveImage(name, url)
+        };
+      };
+    }
+  });
 };
 
 function saveImage(name, url){
@@ -34,3 +44,15 @@ function saveImage(name, url){
     data: {image: {"name": name, "image_url": url}}
   })
 }
+
+function updateImage(id, name, url){
+  var sameName = confirm("Image with the same file name already exists. Overwrite?");
+  if(sameName === true){
+    $.ajax({
+      type: "PUT",
+      url: "/users/" + gon.current_user._id.$oid + "/images/" + id,
+      data: {image: {"name": name, "image_url": url}}
+    })
+  }
+}
+

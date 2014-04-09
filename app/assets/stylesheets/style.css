@@ -52,3 +52,11 @@
   border: 2px solid white;
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.5);
 }
+
+#edit-button {
+  background-color: yellow;
+  border: 2px solid black;
+  height: 22px;
+  width: 120px;
+  cursor: pointer;
+}

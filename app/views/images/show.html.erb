@@ -1,10 +1,14 @@
 <div class="image_show">
 <% unless @image.image_url.empty? %>
-  <%= image_tag @image.image_url %>
+  <%= image_tag @image.image_url, :id => "pic" %>
 <% else %>
-<% image_tag @image.attachment %>
+<%= image_tag @image.attachment, :id => "pic" %>
 <% end %>
     <%= button_to "Delete this picture",
      user_image_path(@user, @image),
       method: :delete, data: { confirm: "Are you sure?"} %>
+      <div id="edit-button">
+        Edit this picture
+        <div>
 </div>
+<%= javascript_include_tag "edit_image" %>

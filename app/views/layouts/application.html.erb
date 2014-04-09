@@ -6,11 +6,11 @@
   <%= include_gon %>
   <%= csrf_meta_tags %>
 </head>
+<script type="text/javascript">localStorage["image"];</script>
 <body>
-
 <header>
-    <div class="nav-bar">
-    <ul>
+<div class="nav-bar">
+  <ul>
     <li><%= link_to "Home", root_path %></li>
 
     <% if logged_in? %>
@@ -24,6 +24,7 @@
     <% end %>
   </ul>
 </div>
+
   </header>
 <%= yield %>
 

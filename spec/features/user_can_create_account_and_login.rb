@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'rspec-rails'
+require 'capybara/rails'
 
 describe "a user can join Imago" do
   let(:user){ FactoryGirl.create(:user) }

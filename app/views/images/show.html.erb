@@ -1,7 +1,9 @@
 <div class="image_show">
-
+<% unless @image.image_url.empty? %>
   <%= image_tag @image.image_url %>
-
+<% else %>
+<% image_tag @image.attachment %>
+<% end %>
     <%= button_to "Delete this picture",
      user_image_path(@user, @image),
       method: :delete, data: { confirm: "Are you sure?"} %>

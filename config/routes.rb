@@ -1,7 +1,7 @@
 Imago::Application.routes.draw do
 
-  resources :users do
-    resources :images
+  resources :users, except: [:index] do
+    resources :images, except: [:new]
   end
   
   root 'welcome#index'

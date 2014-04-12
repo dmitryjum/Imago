@@ -41,7 +41,7 @@ body {
 
 #album_table li{
   margin: 15px;
-  display: inline;
+  display: inline-block;
 }
 
 #album_table img{

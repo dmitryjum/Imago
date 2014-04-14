@@ -12,6 +12,7 @@
 <div class="nav-bar">
   <ul>
     <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "About the author", about_author_path %></li>
 
     <% if logged_in? %>
       <li><%= link_to "My album", user_images_path(current_user) %></li>

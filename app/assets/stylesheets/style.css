@@ -28,7 +28,7 @@ body {
   width: 20%;
   /*height: 50px;*/
   top: 0;
-  float: right;
+  float: left;
   right: 0;
   margin-right:30%;
   background-color: #2f2f2f;
@@ -86,4 +86,9 @@ body {
   height: 22px;
   width: 120px;
   cursor: pointer;
+}
+
+canvas {
+  margin-top: 10px;
+  margin-left: 18%;
 }

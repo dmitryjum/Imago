@@ -3,6 +3,8 @@ Imago::Application.routes.draw do
   resources :users, except: [:index] do
     resources :images, except: [:new]
   end
+
+  get "/about_author", to: "welcome#about_author"
   
   root 'welcome#index'
   post "/session", to: "session#create"

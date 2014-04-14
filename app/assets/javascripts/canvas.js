@@ -7,8 +7,8 @@
   // switch to be able to drag and keep on putting dots down
   var dragging = false;
 
-  canvas.width = 500;
-  canvas.height = 500;
+  canvas.width = 950;
+  canvas.height = 650;
   //setting up thinkness of connecting line to the width of the dot
   context.lineWidth = radius * 2;
 

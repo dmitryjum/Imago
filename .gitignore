@@ -15,4 +15,5 @@
 /log/*.log
 /tmp
 
-
+# Ignore the mongoid .yml file
+/config/mongoid.yml

@@ -1,7 +1,8 @@
 class ImagesController < ApplicationController
-self.before_action(:load_user)
-self.before_action(:load_image, {only: [:show, :update, :destroy]})
-before_action :authenticate, :authorize
+  self.before_action(:load_user)
+  self.before_action(:load_image, {only: [:show, :update, :destroy]})
+  before_action :authenticate, :authorize
+  
   def index
     @image = Image.new
     @images = @user.images.all.to_a

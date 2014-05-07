@@ -6,5 +6,9 @@ class WelcomeController < ApplicationController
   def about_author
     render :about_author
   end
+
+  def about_app
+    render :about_app
+  end
   
 end

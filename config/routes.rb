@@ -5,6 +5,7 @@ Imago::Application.routes.draw do
   end
 
   get "/about_author", to: "welcome#about_author"
+  get "/about_app", to: "welcome#about_app"
   
   root 'welcome#index'
   post "/session", to: "session#create"

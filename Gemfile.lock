@@ -96,6 +96,9 @@ GEM
       nokogiri (~> 1.5.0)
       ruby-hmac
     formatador (0.2.4)
+    foundation-rails (5.2.2.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     gon (5.0.4)
       actionpack (>= 2.3.0)
       json
@@ -234,6 +237,7 @@ DEPENDENCIES
   factory_girl_rails
   ffaker (~> 1.2.0)
   fog (~> 1.3.1)
+  foundation-rails
   gon
   jasmine
   jbuilder (~> 1.2)

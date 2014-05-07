@@ -12,15 +12,6 @@ body {
   background: url(http://www.pixeden.com/media/k2/galleries/165/001-subtle-light-pattern-background-texture-vol5.jpg);
 }
 
-.nav-bar li{
-  display: inline;
-  margin: 15px;
-}
-
-.right {
-  float: right;
-  border: 1px solid black;
-}
 
 #toolbar {
   padding: 10px;

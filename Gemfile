@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'rails_12factor'
 
+gem 'foundation-rails'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -44,13 +46,14 @@ group :development, :test do
 
   gem 'rspec-rails', '~> 3.0.0.beta2' # PJ: KEEP IT LIKE THIS!
   gem 'jasmine'
+  # gem 'mongoid-rspec'
 
   # acceptance testing
   gem 'capybara'
   gem 'launchy'
 
   # test helper libraries
-  gem 'shoulda-matchers'
+ gem 'shoulda-matchers', :require => false
   gem 'factory_girl_rails'
   gem 'ffaker', '~> 1.2.0'
 

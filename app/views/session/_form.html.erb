@@ -1,9 +1,15 @@
 <%= form_tag "/session" do %>
-  <%= label_tag :email %>
-  <%= email_field_tag :email %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Log in!" %>
+
+  <div class="small-4 columns">
+  <%= email_field_tag :email, 'email' %>
+  </div>
+  <div class="small-4 columns">
+  <%= password_field_tag :password, 'password' %>
+  </div>
+  <div class="small-3 columns">
+  <%= submit_tag "Log in!", class:"alert button" %>
+  </div>
+  
 <% end %>
 
 <% unless flash[:message].nil? %>

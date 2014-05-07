@@ -1,33 +1,47 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Imago</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= include_gon %>
-  <%= csrf_meta_tags %>
-</head>
-<script type="text/javascript">localStorage["image"];</script>
-<body>
-<header>
-<div class="nav-bar">
-  <ul>
-    <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to "About the author", about_author_path %></li>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <% if logged_in? %>
-      <li><%= link_to "My album", user_images_path(current_user) %></li>
-      <li><%= link_to "Canvas", user_path(current_user) %></li>
-      <li class="right"><%= link_to("Log Out #{current_user.name}!", "/session", method: "delete") %></li>
-    <% else %>
-      <li class="right"><%= render "session/form" %></li>
-      <li class="right"><%= link_to "Sign up", new_user_path %></li>
-    <% end %>
-  </ul>
-</div>
+    <title><%= content_for?(:title) ? yield(:title) : "IMAGO: Image editor" %></title>
 
-  </header>
-<%= yield %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= include_gon %>
+    <%= csrf_meta_tags %>
+  </head>
+  <script type="text/javascript">localStorage["image"];</script>
+  <body>
+    <header>
+      <nav class="top-bar" data-topbar>
+        <section class="top-bar-section">
+        <ul class="left">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "About application", about_app_path %></li>
+          <li><%= link_to "About the author", about_author_path %></li>
 
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-</body>
+          <% if logged_in? %>
+          <li><%= link_to "My album", user_images_path(current_user) %></li>
+          <li><%= link_to "Canvas", user_path(current_user) %></li>
+        </ul>
+        
+        <ul class="right">
+          <li><%= link_to("Log Out #{current_user.name}!", "/session", method: "delete") %></li>
+          <% else %>
+          <li><%= link_to "Sign up", new_user_path %></li>
+          <li class="has-form">
+            <div class="row collapse">
+            <%= render "session/form" %>
+            </div>
+          </li> 
+        </ul>
+        <% end %>
+        </section>
+      </nav>
+      
+    </header>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

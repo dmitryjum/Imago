@@ -72,7 +72,7 @@ gem "fog", "~> 1.3.1"
 gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs' 
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt' # ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'

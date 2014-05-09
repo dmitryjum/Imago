@@ -21,11 +21,7 @@
   <canvas id="canvas" style="border: 1px solid black">
     Sorry, your browser doesn't support the cavas.
   </canvas>
-  <div id="profile menue">
-  <p><%= form_tag user_path(@user), method: "delete",data: { confirm: "Are you sure?"} do %>
-      <%= submit_tag("Delete My Account") %></p>
-    <% end %>
-  </div>
+  
   <%= javascript_include_tag "canvas", "colors", "radius","heightwidth", "save_image", "edit_image_insert"  %>
 
 

@@ -23,7 +23,7 @@
 
           <% if logged_in? %>
           <li><%= link_to "My album", user_images_path(current_user) %></li>
-          <li><%= link_to "Canvas", user_path(current_user) %></li>
+          <li><%= link_to "Canvas", user_path(current_user), class:"button" %></li>
         </ul>
         
         <ul class="right">

@@ -11,14 +11,16 @@
     </div>
   </div>
 </section>
-<div id="album_table">
-  <ul>
-      <% @images.each do |img| %>
-      <% unless img.image_url.empty? %>
-          <li><p><%= img.name %></p><%= link_to image_tag(img.image_url), user_image_path(@user, img) %></li>
-      <% else %>
-        <li><p><%= img.name %></p><%= link_to image_tag(img.attachment), user_image_path(@user, img) %></li>
+<section class="row">
+  <div class="small-12 columns" id="album_table">
+    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+        <% @images.each do |img| %>
+        <% unless img.image_url.empty? %>
+            <li><p><%= img.name %></p><%= link_to image_tag(img.image_url), user_image_path(@user, img), class: "th" %></li>
+        <% else %>
+          <li><p><%= img.name %></p><%= link_to image_tag(img.attachment), user_image_path(@user, img), class: "th" %></li>
+          <% end %>
         <% end %>
-      <% end %>
-  </ul>
-</div>
+    </ul>
+  </div>
+</section>

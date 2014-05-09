@@ -88,5 +88,6 @@ body {
 
 canvas {
   margin-left: 4em;
+  margin-bottom: 3em;
   background-color: white;
 }

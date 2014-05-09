@@ -12,6 +12,17 @@ body {
   background: url(http://www.pixeden.com/media/k2/galleries/165/001-subtle-light-pattern-background-texture-vol5.jpg);
 }
 
+#index {
+  width: 50%;
+}
+
+#index, #about-app, #about-author, #image_form, #album_notes {
+  margin: 10px auto;
+}
+
+#first {
+  margin-top: 2em;
+}
 
 #toolbar {
   padding: 10px;
@@ -20,10 +31,10 @@ body {
   /*height: 50px;*/
   top: 0;
   float: left;
-  right: 0;
-  margin-right:30%;
+  right: 0px;
+  margin-left: 2em;
   background-color: #2f2f2f;
-  color: white ;
+  color: white;
 }
 
 #album_table {
@@ -80,6 +91,6 @@ body {
 }
 
 canvas {
-  margin-top: 10px;
-  margin-left: 18%;
+  margin-left: 4em;
+  background-color: white;
 }

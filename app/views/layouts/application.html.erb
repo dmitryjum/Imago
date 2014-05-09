@@ -27,6 +27,15 @@
         </ul>
         
         <ul class="right">
+          <li class="has-dropdown">
+            <a href="#">User menu</a>
+            <ul class="dropdown">
+              <li><%= link_to "Update your profile", edit_user_path(current_user) %></li>
+              <li>
+                <%= link_to "Delete my profile", user_path(current_user), method: "delete", data: { confirm: "Are you sure you want to delete your profile? You'll loose your album and all your saved pictures"} %>
+              </li>
+            </ul>
+          </li>
           <li><%= link_to("Log Out #{current_user.name}!", "/session", method: "delete") %></li>
           <% else %>
           <li><%= link_to "Sign up", new_user_path %></li>
@@ -43,5 +52,8 @@
     </header>
     <%= yield %>
     <%= javascript_include_tag "application" %>
+    <% if !logged_in? %>
+      <%= javascript_include_tag "login_placeholders" %>
+    <% end %>
   </body>
 </html>

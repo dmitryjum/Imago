@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'rails_12factor'
 
+# Zurb Foundation CSS framework, helps with grids and styles
 gem 'foundation-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -37,13 +38,12 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-  gem 'pry-rails'
-group :development, :test do
-  # for debugging
 
+# for debugging
+group :development, :test do
+  gem 'pry-rails'
 
   # unit testing frameworks
-
   gem 'rspec-rails', '~> 3.0.0.beta2' # PJ: KEEP IT LIKE THIS!
   gem 'jasmine'
   # gem 'mongoid-rspec'
@@ -53,29 +53,26 @@ group :development, :test do
   gem 'launchy'
 
   # test helper libraries
- gem 'shoulda-matchers', :require => false
+  # gem 'shoulda-matchers', :require => false
   gem 'factory_girl_rails'
   gem 'ffaker', '~> 1.2.0'
-
-  
 end
 
 # ORM for MongoDB
-  gem "mongoid", git: 'git://github.com/mongoid/mongoid.git'
-  gem 'bson_ext'
-
+gem "mongoid", git: 'git://github.com/mongoid/mongoid.git'
+gem 'bson_ext'
 
 # carrierwave for mongoid to upload files
-  gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
- # Fog for Amazon S3 with  carrier wave
-  gem "fog", "~> 1.3.1" 
+# Fog for Amazon S3 with  carrier wave
+gem "fog", "~> 1.3.1" 
 
- # mongoid grid that needed for carrierwave
-  gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs' 
+# mongoid grid that needed for carrierwave
+gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs' 
 
 # Use ActiveModel has_secure_password
- gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'

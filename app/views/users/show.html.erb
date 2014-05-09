@@ -1,5 +1,11 @@
-<h1>Welcome <%= @user.name %></h1>
-<h4>Please note, that the canvas application may not function properly in browsers besides Chrome. If you experience difficulty using brush on canvas or don't even see the field to draw, please install Chrome</h4>
+<section class="row" id="first">
+  <div class="small-12 large-5 columns">
+    <h3>Welcome to your canvas <%= @user.name %></h3>
+  </div>
+  <div class="small-12 large-7 columns panel">
+    <p>Please note, that the canvas application may not function properly in browsers besides Chrome. If you experience difficulty using brush on canvas or don't even see the field to draw, please install Chrome</p>
+  </div>
+</section>
   <div id="toolbar">
     <div id="rad">
       Radius <span id="radval">10</span>
@@ -11,11 +17,11 @@
     <div id="resolution">
     </div>
   </div>
+
   <canvas id="canvas" style="border: 1px solid black">
     Sorry, your browser doesn't support the cavas.
   </canvas>
   <div id="profile menue">
-  <p><%= link_to "Update your profile", edit_user_path(@user) %></p>
   <p><%= form_tag user_path(@user), method: "delete",data: { confirm: "Are you sure?"} do %>
       <%= submit_tag("Delete My Account") %></p>
     <% end %>

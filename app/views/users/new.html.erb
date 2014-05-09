@@ -1,18 +1,23 @@
 <h2>Create a new user here!</h2>
-
-<% unless @user.name.nil? %>
-  <div id="errors">
-    <h3>Errors!</h3>
-    <ul>
-      <% @user.errors.messages.each do |field,error| %>
-        <li><em><%= "#{field.capitalize} #{error.first}!" %></em></li>
-      <% end %>
-    </ul>
+<section class="row">
+  <div class="small-6 columns">
+    <% unless @user.name.nil? %>
+    <div id="errors">
+      <h3>Errors!</h3>
+      <ul>
+        <% @user.errors.messages.each do |field,error| %>
+          <li><em><%= "#{field.capitalize} #{error.first}!" %></em></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <%= render "form" %>
   </div>
-<% end %>
+  <div class="small-6 columns">
+    <div id="user_new_notes" class="panel">
+      <p>Please don't forget your password. If you ever forget it, send me an <%= mail_to "xfiler@ymail.com", "Email" %> I will be able to send to you temporary password to access your account</p>
+    </div>
+  </div>
+</section>
 
-<%= render "form" %>
 
-<div id="user_new_notes">
-  <p>Please don't forget your password. If you ever forget it, send me an <%= mail_to "xfiler@ymail.com", "Email" %> I will be able to send to you temporary password to access your account</p>
-</div>

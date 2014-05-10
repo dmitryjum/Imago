@@ -4,11 +4,5 @@
 <% else %>
 <%= image_tag @image.attachment, :id => "pic" %>
 <% end %>
-<%= button_to "Delete this picture",
- user_image_path(@user, @image),
-method: :delete %>
-<div id="edit-button">
-  Edit this picture
-  <div>
-</div>
+
 <%= javascript_include_tag "edit_image_grab" %>

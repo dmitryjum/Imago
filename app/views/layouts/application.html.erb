@@ -27,6 +27,9 @@
         </ul>
         
         <ul class="right">
+          <% if params[:action] == 'show' && params[:controller] == 'images' %>
+          <%= render "menu" %>
+          <% end %>
           <li class="has-dropdown">
             <a href="#">User menu</a>
             <ul class="dropdown">

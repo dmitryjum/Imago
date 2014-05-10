@@ -1,0 +1,7 @@
+<li class="has-dropdown">
+  <a href="#">Image menu</a>
+  <ul class="dropdown">
+    <li><%= link_to "Delete this picture", user_image_path(@user, @image), method: "delete" %></li>
+    <li id="edit-button"><a href="#">Edit this picture</a></li>
+  </ul>
+</li>

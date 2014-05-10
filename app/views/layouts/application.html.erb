@@ -53,8 +53,8 @@
       </nav>
       
     </header>
-    <%= yield %>
     <%= javascript_include_tag "application" %>
+    <%= yield %>
     <% if !logged_in? %>
       <%= javascript_include_tag "login_placeholders" %>
     <% end %>

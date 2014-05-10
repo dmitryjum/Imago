@@ -6,22 +6,29 @@
     <p>Please note, that the canvas application may not function properly in browsers besides Chrome. If you experience difficulty using brush on canvas or don't even see the field to draw, please install Chrome</p>
   </div>
 </section>
-  <div id="toolbar">
-    <div id="rad">
-      Radius <span id="radval">10</span>
-      <div id="decrad" class="radcontrol">-</div>
-      <div id="incrad" class="radcontrol">+</div>
-    </div>
-    <div id="colors">
-    </div>
-    <div id="resolution">
-    </div>
+<div id="toolbar">
+  <div id="rad">
+    Radius <span id="radval">10</span>
+    <div id="decrad" class="radcontrol">-</div>
+    <div id="incrad" class="radcontrol">+</div>
   </div>
+  <div id="colors">
+  </div>
+  <div id="resolution">
+  </div>
+  <input type='text' class="basic"/>
+  <em id='basic-log'></em>
+</div>
 
-  <canvas id="canvas" style="border: 1px solid black">
-    Sorry, your browser doesn't support the cavas.
-  </canvas>
-  
-  <%= javascript_include_tag "canvas", "colors", "radius","heightwidth", "save_image", "edit_image_insert"  %>
+<canvas id="canvas" style="border: 1px solid black">
+  Sorry, your browser doesn't support the cavas.
+</canvas>
+<script type="text/javascript">
+  $(".basic").spectrum({
+      color: "#f00"
+  });
+</script>
+
+<%= javascript_include_tag "spectrum", "canvas", "colorpicker", "radius", "save_image", "edit_image_insert" %>
 
 

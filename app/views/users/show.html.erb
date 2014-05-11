@@ -1,28 +1,42 @@
-<section class="row" id="first">
-  <div class="small-12 large-5 columns">
-    <h3>Welcome to your canvas <%= @user.name %></h3>
-  </div>
-  <div class="small-12 large-7 columns panel">
-    <p>Please note, that the canvas application may not function properly in browsers besides Chrome. If you experience difficulty using brush on canvas or don't even see the field to draw, please install Chrome</p>
-  </div>
-</section>
-<div id="toolbar">
-  <div id="rad">
-    Radius <span id="radval">10</span>
-    <div id="decrad" class="radcontrol">-</div>
-    <div id="incrad" class="radcontrol">+</div>
-  </div>
-  <div id="colors">
-  </div>
-  <div id="resolution">
-  </div>
-  <input type='text' class="basic"/>
-  <em id='basic-log'></em>
-</div>
+<section class="row">
 
-<canvas id="canvas" style="border: 1px solid black">
-  Sorry, your browser doesn't support the cavas.
-</canvas>
+  <div id="first">
+    <div class="small-12 large-5 columns">
+      <h3>Welcome to your canvas <%= @user.name %></h3>
+    </div>
+    <div class="small-12 large-7 columns panel">
+      <p>Please note, that the canvas application may not function properly in browsers besides Chrome. If you experience difficulty using brush on canvas or don't even see the field to draw, please install Chrome</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="row" id="canvas-row">
+
+  <div id="second">  
+    <div id="toolbar">
+      <div class="range-slider round" data-slider="10" data-options="display_selector: #sliderOutput1;">
+        <span class="range-slider-handle"></span>
+        <span class="range-slider-active-segment"></span>
+        <input id="sliderOutput2" type="hidden">
+      </div>
+      <div id="rad">
+        Radius <span id="sliderOutput1"></span>
+        <!-- <div id="decrad" class="radcontrol">-</div>
+        <div id="incrad" class="radcontrol">+</div> -->
+      </div>
+      <div id="resolution">
+      </div>
+      <input type='text' class="basic"/>
+      <em id='basic-log'></em>
+    </div>
+
+    <canvas id="canvas" style="border: 1px solid black">
+      Sorry, your browser doesn't support the cavas.
+    </canvas>
+  </div>
+
+</section>
 <script type="text/javascript">
   $(".basic").spectrum({
       color: "#f00"

@@ -24,6 +24,15 @@ body {
   margin-top: 2em;
 }
 
+#canvas-row {
+  max-width: 100%
+}
+
+#second {
+  height: 700px;
+  /*width: 80em;*/
+}
+
 #toolbar {
   padding: 10px;
   position: relative;
@@ -82,4 +91,5 @@ canvas {
   margin-left: 4em;
   margin-bottom: 3em;
   background-color: white;
+  /*cursor: pointer;*/
 }

@@ -74,6 +74,9 @@ gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby'# '~> 3.1.2'
 
+# Image magick gem for image manipulation
+gem 'rmagick'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

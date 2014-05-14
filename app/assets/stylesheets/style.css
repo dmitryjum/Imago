@@ -9,11 +9,18 @@
 }
 
 body {
-  background: url(http://www.pixeden.com/media/k2/galleries/165/001-subtle-light-pattern-background-texture-vol5.jpg);
+  /*background: url(http://www.pixeden.com/media/k2/galleries/165/001-subtle-light-pattern-background-texture-vol5.jpg);*/
+  background: url(https://www.nfbtx.org/sites/default/files/images/content/2011-austin-bell-camp-day-5/kids-splatter-and-hand-painting-during-art-appreciation-class.jpg);
+);
+
 }
 
 #index {
   width: 50%;
+}
+
+.album-image-back {
+  background-color: white;
 }
 
 #index, #about-app, #about-author, #image_form, #album_notes {
@@ -37,7 +44,6 @@ body {
   padding: 10px;
   position: relative;
   width: 20%;
-  /*height: 50px;*/
   top: 0;
   float: left;
   right: 0px;
@@ -55,7 +61,7 @@ body {
   height: 185px;
 }
 
-.radcontrol {
+/*.radcontrol {
   width: 30px;
   height: 30px;
   background-color: #4c4c4c;
@@ -63,7 +69,7 @@ body {
   text-align: center;
   padding-top: 1px;
   cursor: pointer;
-}
+}*/
 
 #rad {
   float: left;

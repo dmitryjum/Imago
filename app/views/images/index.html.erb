@@ -16,9 +16,9 @@
     <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
         <% @images.each do |img| %>
         <% unless img.image_url.empty? %>
-            <li><p><%= img.name %></p><%= link_to image_tag(img.image_url), user_image_path(@user, img), class: "th" %></li>
+            <li><p><%= img.name %></p><%= link_to image_tag(img.image_url), user_image_path(@user, img), class: "th album-image-back" %></li>
         <% else %>
-          <li><p><%= img.name %></p><%= link_to image_tag(img.attachment), user_image_path(@user, img), class: "th" %></li>
+          <li style="background-color: white;"><p><%= img.name %></p><%= link_to image_tag(img.attachment), user_image_path(@user, img), class: "th album-image-back" %></li>
           <% end %>
         <% end %>
     </ul>

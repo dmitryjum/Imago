@@ -1,8 +1,11 @@
-<div class="image_show">
-<% unless @image.image_url.empty? %>
-  <%= image_tag @image.image_url, :id => "pic" %>
-<% else %>
-<%= image_tag @image.attachment, :id => "pic" %>
-<% end %>
+<section class="row">
+  <div class="small-12 large-12 columns">
+    <% unless @image.image_url.empty? %>
+      <%= image_tag @image.image_url, :id => "pic", class: "album-image-back" %>
+    <% else %>
+    <%= image_tag @image.attachment, :id => "pic", class: "album-image-back" %>
+    <% end %>
+  </div>
+</section>
 
 <%= javascript_include_tag "edit_image_grab" %>

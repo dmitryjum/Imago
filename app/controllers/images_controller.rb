@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   self.before_action(:load_user)
-  self.before_action(:load_image, {only: [:show, :update, :destroy]})
+  self.before_action(:load_image, {only: [:show, :update, :destroy, :polarize]})
   before_action :authenticate, :authorize
   
   def index

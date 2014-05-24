@@ -52,6 +52,11 @@ body {
   color: white;
 }
 
+.button {
+  cursor: pointer;
+  margin-left: 1em;
+}
+
 #album_table {
   text-align: center;
 }

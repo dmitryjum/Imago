@@ -1,6 +1,7 @@
 var formSave = document.createElement('form');
 var nameInput = document.createElement('input');
 var saveButton = document.createElement('input');
+var updateButton = document.createElement('input');
 var resolution = document.getElementById('resolution');
 nameInput.setAttribute('type', "text");
 nameInput.setAttribute('name', "image name");
@@ -8,29 +9,39 @@ nameInput.setAttribute('placeholder', "image name")
 
 saveButton.setAttribute('type', "submit");
 saveButton.setAttribute('value', "Save");
+saveButton.className = "tiny button";
+updateButton.setAttribute('type', "submit");
+updateButton.setAttribute('value', "update");
+updateButton.className = "tiny button";
 formSave.appendChild(nameInput);
 formSave.appendChild(saveButton);
+formSave.appendChild(updateButton);
 resolution.appendChild(formSave);
 
 saveButton.addEventListener("click", function(e){
   e.preventDefault();
   var imageName = nameInput.value;
   var imageUrl = canvas.toDataURL();
+  saveImage(imageName, imageUrl);  
+});
+
+updateButton.addEventListener("click", function(e){
+  e.preventDefault();
+  var imageName = nameInput.value;
+  var imageUrl = canvas.toDataURL();
   compareDocs(imageName, imageUrl);
-  // saveImage(imageName, imageUrl);  
 });
 
 function compareDocs(name, url){
   $.getJSON("/users/" + gon.current_user._id.$oid + "/images", function(response){
-    var allItems = response;
+     allItems = response;
+     console.log(allItems)
     if (allItems.length === 0){
       saveImage(name, url)
     } else {
         for (var i = 0; i < allItems.length; i++){
         if (name === allItems[i].name){
           updateImage(allItems[i]._id.$oid, name, url)
-        } else {
-          saveImage(name, url)
         };
       };
     }

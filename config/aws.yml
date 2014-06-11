@@ -1,11 +1,9 @@
 development:
-    access_key_id: AKIAJGRRSSA7EGQNNL5A
-    secret_access_key: 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
+    IMAGO_AWS_ACCESS_KEY_ID: AKIAJGRRSSA7EGQNNL5A
+    IMAGO_AWS_SECRET_ACCESS_KEY: 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
 
   test:
-    access_key_id: AKIAJGRRSSA7EGQNNL5A
-    secret_access_key: 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
+    <<: *development
 
   production:
-    access_key_id: AKIAJGRRSSA7EGQNNL5A
-    secret_access_key: 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
+    <<: *development

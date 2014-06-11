@@ -18,3 +18,5 @@
 # Ignore the mongoid .yml file
 /config/mongoid.yml
 
+# Ignore aws keys file - aws.yml
+/config/aws.yml

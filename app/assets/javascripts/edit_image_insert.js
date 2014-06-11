@@ -1,11 +1,16 @@
 function insertImageInCanvas(){
   if (localStorage.image != ""){
-    var transPic = localStorage.image;
-    localStorage.image = ""
-    var imgTag = document.createElement('img');
-    // imgTag.crossOrigin = 'Anonymous';
-    imgTag.src = transPic;
-    context.drawImage(imgTag,0,0)
+    var img = new Image;
+    var src = localStorage.image;
+    localStorage.image = "";
+
+    img.crossOrigin = "Anonymous";
+    img.onload = function() {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      context.drawImage(img, 0, 0);
+    }
+    img.src = src;
   } else {
     console.log("localstorage image empty now")
   }

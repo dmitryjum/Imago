@@ -3,7 +3,9 @@ development:
     secret_access_key: ZV7Uxe4iMgnMC2NxkSM9ch3/3A/izToVMEJxfPfQ
 
   test:
-    <<: *development
+    access_key_id: AKIAJGRRSSA7EGQNNL5A
+    secret_access_key: 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
 
   production:
-    <<: *development
+    access_key_id: AKIAJGRRSSA7EGQNNL5A
+    secret_access_key: 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

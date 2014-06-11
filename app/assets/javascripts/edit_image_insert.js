@@ -3,6 +3,7 @@ function insertImageInCanvas(){
     var transPic = localStorage.image;
     localStorage.image = ""
     var imgTag = document.createElement('img');
+    // imgTag.crossOrigin = 'Anonymous';
     imgTag.src = transPic;
     context.drawImage(imgTag,0,0)
   } else {

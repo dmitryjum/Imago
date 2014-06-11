@@ -9,6 +9,11 @@
 
   canvas.width = 900;
   canvas.height = 600;
+
+  var sourceWidth = canvas.width;
+  var sourceHeight = canvas.height;
+  var sourceX = canvas.width / 2 - sourceWidth / 2;
+  var sourceY = canvas.height / 2 - sourceHeight / 2;
   //setting up thikness of connecting line to the width of the dot
   context.lineWidth = radius * 2;
 

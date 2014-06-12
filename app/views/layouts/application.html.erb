@@ -7,6 +7,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "IMAGO: Image editor" %></title>
 
     <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= include_gon %>
     <%= csrf_meta_tags %>
@@ -53,10 +54,10 @@
       </nav>
       
     </header>
-    <%= javascript_include_tag "application" %>
+    <%= javascript_tag("$(function(){ $(document).foundation(); });") %>
     <%= yield %>
     <% if !logged_in? %>
-      <%= javascript_include_tag "login_placeholders" %>
+      <%= javascript_tag("loginPlaceholders();") %>
     <% end %>
   </body>
 </html>

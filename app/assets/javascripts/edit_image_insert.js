@@ -1,4 +1,4 @@
-function insertImageInCanvas(){
+function insertImageInCanvasFunc(){
   if (localStorage.image != ""){
     var img = new Image;
     var src = localStorage.image;
@@ -8,13 +8,14 @@ function insertImageInCanvas(){
       canvas.width = img.width;
       canvas.height = img.height;
       context.drawImage(img, 0, 0);
+      setColor();
     };
     img.src = src;
   } else {
     console.log("localstorage image empty now")
   }
 };
-insertImageInCanvas();
+// insertImageInCanvas();
 
 
 // localStorage is a special storage in HTML5 allowing

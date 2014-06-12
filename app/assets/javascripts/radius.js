@@ -1,5 +1,5 @@
 function radiusFunc() {
-  var RadSpan;
+  var radSpan;
   var setRadius = function(newRadius){
       radius = newRadius;
       context.lineWidth = radius*2;

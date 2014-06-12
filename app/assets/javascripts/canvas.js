@@ -1,5 +1,6 @@
 var canvas;
 var context;
+var radius;
 function canvasFunc() {  
   canvas = document.getElementById('canvas');
   context = canvas.getContext('2d');
@@ -8,7 +9,7 @@ function canvasFunc() {
 
   canvas.width = 900;
   canvas.height = 600;
-  var radius = 10;
+  radius = 10;
   Filters = {};
   // switch to be able to drag and keep on putting dots down
   var dragging = false;

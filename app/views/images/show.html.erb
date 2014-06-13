@@ -1,7 +1,7 @@
 <section class="row">
   <div class="small-12 large-12 columns">
     <% unless @image.image_url.empty? %>
-      <%= image_tag @image.image_url, :id => "pic", class: "album-image-back" %>
+      <%= image_tag @image.image_url, :id => "pic", class: "album-image-back filter-blur" %>
     <% else %>
     <%= image_tag @image.attachment, :id => "pic", class: "album-image-back" %>
     <% end %>

@@ -1,11 +1,15 @@
 var canvas;
 var context;
 var radius;
+var originalImage;
 function canvasFunc() {  
   canvas = document.getElementById('canvas');
   context = canvas.getContext('2d');
   var invertButton = document.getElementById("invert-colors");
   var brightButton = document.getElementById("brightness");
+  var greyButton = document.getElementById("greyscale");
+  var copyButton = document.getElementById("copy");
+  var pasteButton = document.getElementById("paste");
 
   canvas.width = 900;
   canvas.height = 600;
@@ -76,9 +80,39 @@ function canvasFunc() {
     context.putImageData(imageData, 0, 0);
   };
 
+  Filters.greyscale = function() {
+    var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+    for (var i = 0; i < data.length; i += 4) {
+      var v = 0.2126 * data[i] + 0.7152 * data[i + 1] + 0.0722 * data[i + 2];
+      data[i] = data[i + 1] = data[i + 2] = v;
+    }
+    context.putImageData(imageData, 0, 0);
+  }
+
+  Filters.copy = function(){
+    originalImage = context.getImageData(0, 0, canvas.width, canvas.height);
+  };
+
+  Filters.paste = function(){
+    context.putImageData(originalImage, 0, 0);
+  };
+
+  copyButton.onclick = function(){
+    Filters.copy();
+  };
+
+  pasteButton.onclick = function(){
+    Filters.paste();
+  };
+
   brightButton.onclick = function(){
     Filters.brightness();
   };
+
+  greyButton.onclick = function(){
+    Filters.greyscale();
+  }
 
   invertButton.onclick = function(){
     Filters.invertColors();

@@ -1,8 +1,9 @@
-function editImageGrab(){
-  pic = document.getElementById('pic')
-  localStorage["image"] = pic.src
+function editImageGrab(userid){
+  var pic = document.getElementById('pic')
   var editButton = document.getElementById('edit-button');
   editButton.addEventListener("click", function(){
-    document.location.href = '/users/' + gon.current_user._id.$oid;
+    localStorage["image"] = pic.src
+    console.log(localStorage.image)
+    document.location.href = '/users/' + userid;
   });
 };

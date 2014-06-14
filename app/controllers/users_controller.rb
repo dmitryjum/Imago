@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    gon.current_user = @user
+  
   end
 
   def update

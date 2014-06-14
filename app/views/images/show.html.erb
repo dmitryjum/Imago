@@ -8,4 +8,6 @@
   </div>
 </section>
 
-<%= javascript_tag("editImageGrab();") %>
+<script type="text/javascript">
+  editImageGrab("<%= @user.id %>");
+</script>

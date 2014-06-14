@@ -3,6 +3,7 @@ function insertImageInCanvasFunc(){
     var img = new Image;
     var src = localStorage.image;
     localStorage.image = "";
+    console.log("localstorage emtpied")
     img.crossOrigin = "Anonymous";
     img.onload = function() {
       canvas.width = img.width;
@@ -15,7 +16,6 @@ function insertImageInCanvasFunc(){
     console.log("localstorage image empty now")
   }
 };
-// insertImageInCanvas();
 
 
 // localStorage is a special storage in HTML5 allowing

@@ -1,12 +1,11 @@
 class ImagesController < ApplicationController
   self.before_action(:load_user)
-  self.before_action(:load_image, {only: [:show, :update, :destroy, :one]})
+  self.before_action(:load_image, {only: [:show, :update, :destroy]})
   before_action :authenticate, :authorize
   
   def index
     @image = Image.new
     @images = @user.images.all.to_a
-    # render json: @images
     respond_to do |format|
       format.html {render :index}
       format.json {render json: @images}
@@ -14,7 +13,7 @@ class ImagesController < ApplicationController
   end
 
   def show
-    gon.current_user = @user
+    
   end
 
   def create

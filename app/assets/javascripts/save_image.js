@@ -1,4 +1,4 @@
-function saveImageFunc() {
+function saveImageFunc(userid) {
   var formSave = document.createElement('form');
   var nameInput = document.createElement('input');
   var saveButton = document.createElement('input');
@@ -34,7 +34,7 @@ function saveImageFunc() {
   });
 
   function compareDocs(name, url){
-    $.getJSON("/users/" + gon.current_user._id.$oid + "/images", function(response){
+    $.getJSON("/users/" + userid + "/images", function(response){
        allItems = response;
        console.log(allItems)
       if (allItems.length === 0){
@@ -52,7 +52,7 @@ function saveImageFunc() {
   function saveImage(name, url){
     $.ajax({
       type: "POST",
-      url: "/users/" + gon.current_user._id.$oid + "/images",
+      url: "/users/" + userid + "/images",
       data: {image: {"name": name, "image_url": url}},
       success: alert("Your pic has been saved!")
     })
@@ -63,7 +63,7 @@ function saveImageFunc() {
     if(sameName === true){
       $.ajax({
         type: "PUT",
-        url: "/users/" + gon.current_user._id.$oid + "/images/" + id,
+        url: "/users/" + userid + "/images/" + id,
         data: {image: {"name": name, "image_url": url}},
         success: alert("Your pic has been updated!")
       })

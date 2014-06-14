@@ -1,11 +1,23 @@
 <section class="row">
 
   <div id="first">
-    <div class="small-12 large-5 columns">
-      <h3>Welcome to your canvas <%= @user.name %></h3>
+    <div class="small-6 large-6 columns">
+      <ul class="button-group">
+        <li><button class="tiny alert button" id="copy">Copy Current Image</button></li>
+        <li><button class="tiny secondary button" id="invert-colors">Invert Colors</button></li>
+        <li><button class="tiny success button" id="brightness">Brighten Image</button></li>
+      </ul>
+      <ul class="button-group">
+        <li><button class="tiny alert button" id="paste">Resotre From Buffer</button></li>
+        <li><button class="tiny secondary button" id="greyscale">Greyscale Image</button></li>
+        <li><button class="tiny success button" id="darkness">Darken Image</button></li>
+      </ul>
+      <ul class="button-group">
+        <li><button class="tiny button" id="pixel">Pixelate Image</button></li>
+      </ul>
     </div>
-    <div class="small-12 large-7 columns panel callout">
-      <p>Please note, that the canvas application may not function properly in browsers besides Chrome. If you experience difficulty using brush on canvas or don't even see the field to draw, please install Chrome</p>
+    <div class="small-6 large-6 columns panel callout">
+      <p>Please click "Copy Current Image" button before you start editing your image. Once you make a mistake or want to revert to the original, you'll be able to click "Restore From Buffer" to get back.</p>
     </div>
   </div>
 
@@ -15,13 +27,6 @@
 
   <div id="second">  
     <div id="toolbar">
-      <div class="filters">
-        <button class="tiny button" id="invert-colors">Invert Colors</button>
-        <button class="tiny button" id="brightness">Brighten Image</button>
-        <button class="tiny button" id="greyscale">Greyscale Image</button>
-        <button class="tiny button" id="copy">Copy current image</button>
-        <button class="tiny button" id="paste">Resotre from buffer</button>
-      </div>
       <div class="range-slider round" data-slider="10" data-options="display_selector: #sliderOutput1;">
         <span class="range-slider-handle"></span>
         <span class="range-slider-active-segment"></span>

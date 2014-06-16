@@ -21,6 +21,30 @@
           <% if logged_in? %>
           <li><%= link_to "My album", user_images_path(current_user) %></li>
           <li><%= link_to "Canvas", user_path(current_user), class:"button" %></li>
+          <% if params[:action] == "show" && params[:controller] == "users" %>
+          <li class="has-dropdown">
+            <a href="#">Edit</a>
+            <ul class="dropdown">
+              <li id="copy"><a>Copy Current Image</a></li>
+              <li id="paste"><a>Paste Copied Image</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Filter</a>
+            <ul class="dropdown">
+              <li id="invert-colors"><a>Invert Colors</a></li>
+              <li id="greyscale"><a>Greyscale Image</a></li>
+              <li id="pixel"><a>Pixelate Image</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Brightness</a>
+            <ul class="dropdown">
+              <li id="brightness"><a>Brighter</a></li>
+              <li id="darkness"><a>Darker</a></li>
+            </ul>
+          </li>
+          <% end %>
         </ul>
         
         <ul class="right">

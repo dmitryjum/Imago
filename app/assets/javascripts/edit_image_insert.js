@@ -18,5 +18,6 @@ function insertImageInCanvasFunc(){
 };
 
 
+
 // localStorage is a special storage in HTML5 allowing
 // to transfer values between pages (might not be secure)

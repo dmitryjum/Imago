@@ -7,9 +7,14 @@ Back-end:
 
 * Ruby on Rails based server
 * MongoDB databse
+* Mongoid ORM
+* Carrierwave-mongoid gem
+* AWS S3 storage for picture storage
+ 
 Front-end:
 * HTML5 CanvasElement
-* CSS3, possibly Sass
+* CSS3
+* Zurb Foundatoin Framework
 * JavaScript
 * jQuery
 

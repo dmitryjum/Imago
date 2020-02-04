@@ -17,3 +17,5 @@
 
 # Ignore the mongoid .yml file
 /config/mongoid.yml
+# Ignore application configuration
+/config/application.yml

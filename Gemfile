@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 1.2'
 # Gon, for simple varible passing from Ruby to JS
 # gem 'gon'
 
+gem 'figaro'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
